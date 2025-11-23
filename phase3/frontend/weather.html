@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather • ZooTrack</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Chart.js -->
+    <script src="/assets/js/libs/chart.js"></script>
+
+    <!-- api -->
+    <script src="/assets/js/api.js" defer></script>
+    <script src="/assets/js/weather.js" defer></script>
+</head>
+
+<body class="weather-page">
+
+<!-- navbar -->
+<header class="top-nav">
+    <h1>Weather</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="animals.html">Animals</a>
+        <a href="weather.html">Weather</a>
+        <a href="views.html">Reports</a>
+    </nav>
+
+    <div id="nav-auth-buttons">
+        <button id="nav-logout-btn" class="nav-btn nav-btn-logout">Logout</button>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- weather card -->
+    <section class="card weather-card">
+        <div class="weather-info">
+            <h2 id="weather-title">Current Weather at the Zoo</h2>
+
+            <p><strong>Temperature:</strong> <span id="temp">--</span> °C</p>
+            <p><strong>Humidity:</strong> <span id="humidity">--</span> %</p>
+            <p><strong>Condition:</strong> <span id="condition">--</span></p>
+            <p><strong>City:</strong> <span id="city">Toronto</span></p>
+
+            <button id="refresh-weather">Refresh</button>
+        </div>
+
+        <div class="weather-chart">
+            <canvas id="weatherChart"></canvas>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

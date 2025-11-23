@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports • ZooTrack</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <script src="/assets/js/libs/chart.js" defer></script>
+
+    <!-- js -->
+    <script src="/assets/js/api.js" defer></script>
+</head>
+
+<body class="views-page">
+
+<header class="top-nav">
+    <h1>Reports</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="animals.html">Animals</a>
+        <a href="weather.html">Weather</a>
+        <a href="views.html">Reports</a>
+    </nav>
+
+    <div id="nav-auth-buttons">
+        <button id="nav-logout-btn" class="nav-btn nav-btn-logout">Logout</button>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- view card -->
+    <section class="card">
+        <h2>Select a View</h2>
+
+        <div class="form-grid">
+
+            <div class="form-row">
+                <label for="view-select">Available Views</label>
+                <select id="view-select"></select>
+            </div>
+
+            <div class="form-row">
+                <label for="view-search">Search Results</label>
+                <input type="text" id="view-search" placeholder="Filter rows…" />
+            </div>
+
+        </div>
+
+        <button id="load-view-btn" style="margin-top: 0.7rem;">Load View</button>
+
+        <p id="view-error" class="error"></p>
+    </section>
+
+
+    <!-- output for views -->
+    <section class="card">
+        <h2 id="view-title">View Data</h2>
+
+        <div style="overflow-x: auto; margin-top: 1rem;">
+            <table>
+                <thead id="view-thead"></thead>
+                <tbody id="view-tbody"></tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 1.2rem; display:flex; gap:10px;">
+            <button id="export-csv" class="secondary">Export CSV</button>
+            <button id="export-pdf" class="secondary">Export PDF</button>
+        </div>
+
+
+        <p id="empty-placeholder" class="help-text" style="margin-top: 1rem; display:none;">
+            No data available for this view.
+        </p>
+    </section>
+
+    <!-- for chart.js -->
+    <section id="chart-section" class="card" style="display:none; margin-top: 20px;">
+        <h2 id="chart-title">Chart</h2>
+        <canvas id="viewChart" height="120"></canvas>
+    </section>
+
+        <!-- Custom JSON web service -->
+<section class="card" style="margin-top: 20px;">
+    <h2>Animal Summary</h2>
+
+    <button id="load-summary-btn" class="secondary" style="margin-top: 0.7rem;">
+        Load Animal Summary
+    </button>
+
+    <pre id="summary-output" style="
+        background:#f5f5f5;
+        padding:1rem;
+        margin-top:1rem;
+        border-radius:6px;
+        max-height:300px;
+        overflow:auto;
+        font-size:0.9rem;
+    ">
+    </pre>
+</section>
+
+
+</main>
+
+<script src="/assets/js/views.js" defer></script>
+</body>
+</html>

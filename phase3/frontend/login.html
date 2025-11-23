@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login • ZooTrack</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/js/api.js" defer></script>
+    <script src="/assets/js/auth.js" defer></script>
+</head>
+
+<body class="login-page">
+
+<header class="top-nav">
+    <h1>🦛ZooTrack Login</h1>
+</header>
+
+<main class="container" style="max-width: 450px; margin-top: 60px;">
+    <section class="card">
+
+        <h2>Login</h2>
+
+        <!-- login form has to have ids -->
+        <form id="login-form">
+
+            <div class="form-row">
+                <label for="phone_number">Phone Number</label>
+                <input type="text" id="phone_number" placeholder="Enter phone number" required>
+            </div>
+
+            <div class="form-row">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+
+            <button type="submit" style="margin-top: 1rem;">Login</button>
+
+            <p id="login-error" class="error" style="margin-top: 1rem;"></p>
+        </form>
+
+    </section>
+</main>
+
+</body>
+</html>
+

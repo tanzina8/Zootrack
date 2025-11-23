@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZooTrack</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- js -->
+    <script src="/assets/js/api.js" defer></script>
+    <script src="/assets/js/auth.js" defer></script>
+</head>
+
+<body class="home-page">
+
+<!-- navbar -->
+<header class="top-nav">
+    <h1>🦛Zootrack</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="animals.html">Animals</a>
+        <a href="weather.html">Weather</a>
+        <a href="views.html">Reports</a>
+    </nav>
+
+    <div id="nav-auth-buttons">
+        <button id="nav-login-btn" class="nav-btn nav-btn-login">Login</button>
+        <button id="nav-logout-btn" class="nav-btn nav-btn-logout" style="display:none;">Logout</button>
+    </div>
+</header>
+
+<section class="parallax">
+    <div class="parallax-content">
+        <h1 class="welcome-title">Welcome to Zootrack</h1>
+
+        <div class="zoo-info-box">
+            <p><strong>Hours:</strong><br>
+            Monday – Friday: 9:00 AM – 6:00 PM<br>
+            Saturday – Sunday: 0:00 AM – 8:00 PM</p>
+
+            <p><strong>Location:</strong><br>
+            123 Zoo Road<br>
+            Toronto, ON</p>
+
+            <p><strong>Contact:</strong><br>
+            (416) 888-0123</p>
+        </div>
+    </div>
+</section>
+
+
+<main class="container">
+
+    <!-- dashboard cards -->
+    <section class="dashboard-grid">
+
+        <a href="animals.html" class="dash-card">
+            <h2>Animals</h2>
+            <p>Management and analysis of zoo animals.</p>
+            <img src="/assets/icons/pawprint.svg" class="card-icon-img">
+        </a>
+
+        <a href="weather.html" class="dash-card">
+            <h2>Weather</h2>
+            <p>Check current weather conditions at the zoo.</p>
+            <img src="/assets/icons/cloud.svg" class="card-icon-img">
+        </a>
+
+        <a href="views.html" class="dash-card">
+            <h2>Reports & Views</h2>
+            <p>Access database views, exports, and analytics.</p>
+            <img src="/assets/icons/barchart.svg" class="card-icon-img">
+        </a>
+
+    </section>
+
+    <!-- login popup -->
+    <section id="login-card" class="card login-popup" style="display:none;">
+        <h2>Login</h2>
+
+        <form id="login-form">
+            <div class="form-row">
+                <label for="phone_number">Phone Number</label>
+                <input type="text" id="phone_number" required>
+            </div>
+
+            <div class="form-row">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+            <p id="login-error" class="error"></p>
+        </form>
+    </section>
+
+</main>
+
+</body>
+</html>
+

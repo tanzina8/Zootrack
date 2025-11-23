@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animals • ZooTrack</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- js -->
+    <script src="/assets/js/api.js" defer></script>
+    <script src="/assets/js/animals.js" defer></script>
+</head>
+
+<body class="animals-page">
+
+<!-- navbar -->
+<header class="top-nav">
+    <h1>Animals</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="animals.html">Animals</a>
+        <a href="weather.html">Weather</a>
+        <a href="views.html">Reports</a>
+    </nav>
+
+    <div id="nav-auth-buttons">
+        <button id="nav-logout-btn" class="nav-btn nav-btn-logout">Logout</button>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- add/edit form -->
+    <section class="card" id="animal-form-section">
+        <h2>Add / Edit Animal</h2>
+
+        <input type="hidden" id="animal_id" />
+
+        <form id="animal-form">
+            <div class="form-grid">
+                
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input list="name-suggestions" id="name" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="species">Species</label>
+                    <input list="species-suggestions" id="species" required />
+                    <datalist id="species-suggestions">
+                        <option value="Lion"></option>
+                        <option value="Turtle"></option>
+                        <option value="Penguin"></option>
+                        <option value="Panda"></option>
+                        <option value="Frog"></option>
+                        <option value="Clownfish"></option>
+                    </datalist>
+                </div>
+
+                <div class="form-row">
+                    <label for="birth_date">Birth Date</label>
+                    <input type="date" id="birth_date" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="sex">Sex</label>
+                    <select id="sex" required>
+                        <option value="">Select…</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="current_health_status">Health Status</label>
+                    <select id="current_health_status" required>
+                        <option value="">Select…</option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Recovering">Recovering</option>
+                        <option value="Under Observation">Under Observation</option>
+                        <option value="Stable">Stable</option>
+                        <option value="Critical">Critical</option>
+                        <option value="Injured">Injured</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="habitat_id">Habitat ID</label>
+                    <input type="number" id="habitat_id" required min="1" />
+                </div>
+            </div>
+
+            <p id="animal-form-error" class="error"></p>
+
+            <div style="margin-top: 0.75rem;">
+                <button type="submit">Save Animal</button>
+                <button type="button" id="reset-form" class="secondary">Clear Form</button>
+            </div>
+
+            <p class="help-text">Click "Edit" on a row to auto-fill the form.</p>
+        </form>
+    </section>
+
+    <!-- filter and searching -->
+    <section class="card">
+        <h2>Search & Filter</h2>
+        <div class="form-grid">
+            <div class="form-row">
+                <label for="filter-name">Name</label>
+                <input type="text" id="filter-name" />
+            </div>
+            <div class="form-row">
+                <label for="filter-species">Species</label>
+                <input type="text" id="filter-species" />
+            </div>
+            <div class="form-row">
+                <label for="filter-health">Health</label>
+                <input type="text" id="filter-health" />
+            </div>
+        </div>
+    </section>
+
+    <!-- table -->
+    <section class="card">
+        <h2>Animals Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Species</th>
+                    <th>Birth Date</th>
+                    <th>Sex</th>
+                    <th>Health</th>
+                    <th>Habitat</th>
+                    <th style="width:120px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="animals-tbody">
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+</body>
+</html>
